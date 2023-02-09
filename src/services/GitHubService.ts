@@ -13,7 +13,9 @@ export class GitHubService  {
         owner: process.env.GITHUB_OWNER!,
         repo: process.env.GITHUB_REPO!,
         ref: "heads/mediator"
-      })
+      });
+      console.log(data);
+      return
       const response = await this.octokit.git.createRef({
         owner: process.env.GITHUB_OWNER!,
         repo: process.env.GITHUB_REPO!,
