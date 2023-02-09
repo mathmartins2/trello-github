@@ -17,7 +17,7 @@ export class GitHubService  {
       const response = await this.octokit.git.createRef({
         owner: process.env.GITHUB_OWNER!,
         repo: process.env.GITHUB_REPO!,
-        ref: `refs/heads/${branchName}`,
+        ref: `refs/heads/${encodeURI(branchName)}`,
         sha: data.object.sha
       });
       console.log(
