@@ -4,7 +4,8 @@ export class TrelloService {
   private readonly gitHubService = new GitHubService(process.env.GITHUB_TOKEN!);
 
   async handleWebhook(payload: any) {
-    const card = payload.card;
+    let card = payload.card;
+    card = card.replace(/\s/g, '-');
     const listAfter = payload.list;
 
     switch (listAfter) {
