@@ -4,6 +4,7 @@ export class TrelloService {
   private readonly gitHubService = new GitHubService(process.env.GITHUB_TOKEN!);
 
   async handleWebhook(payload: any) {
+    console.log(payload);
     const card = payload.board;
     const listAfter = payload.list;
 
