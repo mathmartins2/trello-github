@@ -8,7 +8,7 @@ export class TrelloService {
     const listAfter = payload.list;
 
     switch (listAfter) {
-      case 'Todo':
+      case 'In Progress':
         await this.gitHubService.createBranch(card);
         break;
       case 'Test':
